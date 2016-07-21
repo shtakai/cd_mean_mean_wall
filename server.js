@@ -8,6 +8,7 @@ const app = express()
 const port = process.env.PORT = process.env.PORT || 8000
 
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static(path.join(__dirname, './client')))
 app.use(express.static(path.join(__dirname, './bower_components')))
 
