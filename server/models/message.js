@@ -4,13 +4,13 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const MessageSchema = new Schema({
-  name: {
+  content: {
     type: String,
     required: true,
-    maxlength: 20,
-    index: {
-      unique: true
-    },
+  },
+  _user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
   }
 },{
   timestamps: {

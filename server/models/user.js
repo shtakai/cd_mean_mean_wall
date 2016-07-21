@@ -11,7 +11,8 @@ const UserSchema = new Schema({
     index: {
       unique: true
     },
-  }
+  },
+  messages: [ { type:Schema.Types.ObjectId, ref:'Message' } ],
 },{
   timestamps: {
     createdAt: 'created_at',
