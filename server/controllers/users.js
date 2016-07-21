@@ -39,13 +39,21 @@ module.exports = {
           } else {
             // new user created
             console.log('new user', _u)
-            res.json({status:true, user: _u})
+            req.session['user_info'] = {
+              id: _u._id,
+              name: _u.name
+            }
+            res.json({status:true, user: req.session['user_info']})
           }
         })
       }else {
         // found
         console.log('user found', user)
-        res.json({status:true, user: user})
+        req.session['user_info'] = {
+          id: user._id,
+          name: user.name
+        }
+        res.json({status:true, user: req.session['user_info']})
       }
     })
   }, // end login
