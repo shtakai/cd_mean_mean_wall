@@ -57,6 +57,16 @@ module.exports = {
       }
     })
   }, // end login
+  session: (req, res) => {
+     console.log('C#session')
+     let userInfo = req.session['user_info']
+     console.log('session', userInfo)
+     if(req.session['user_info']){
+       res.json({status:true, user: req.session['user_info'] })
+     }else {
+       res.json({status:false, errors:['user not found']})
+     }
+  }
 }
 
 
