@@ -13,6 +13,7 @@ const UserSchema = new Schema({
     },
   },
   messages: [ { type:Schema.Types.ObjectId, ref:'Message' } ],
+  comments: [ { type:Schema.Types.ObjectId, ref:'Comment' } ],
 },{
   timestamps: {
     createdAt: 'created_at',

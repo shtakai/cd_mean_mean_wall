@@ -11,6 +11,10 @@ const CommentSchema = new Schema({
   _user: {
     type: Schema.Types.ObjectId,
     ref: 'User'
+  },
+  message: {
+    type: Schema.Types.ObjectId,
+    ref: 'Message'
   }
 },{
   timestamps: {
